@@ -7,7 +7,7 @@
             
         </div>
         <div class="col-9">
-            <div><h1></h1></div>
+            <div><h1>{{ $user->username }}</h1></div>
 
         </div>
     </div>
