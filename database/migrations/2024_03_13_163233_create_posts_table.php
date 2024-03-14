@@ -12,8 +12,13 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('posts', function (Blueprint $table) {
-            $table->id();
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->string('caption');
+            $table->string('image');
             $table->timestamps();
+
+            $table->index('user_id'); 
         });
     }
 
