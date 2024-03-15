@@ -11,8 +11,21 @@ class ProfilesController extends Controller
     {        
         $user = User::findOrFail($user);
 
-        return view('home', [
+        return view('profiles.index', [
             'user' => $user,
         ]);
     }
+
+    public function store()
+    {
+        $data = request()->validate([
+            'caption'=>'required',
+            'image'=>['required','image'],
+        ]);
+
+        \App\Models\Post::create($data);
+
+        dd(request()->all());
+    }
+
 }
