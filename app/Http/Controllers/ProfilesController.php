@@ -16,16 +16,4 @@ class ProfilesController extends Controller
         ]);
     }
 
-    public function store()
-    {
-        $data = request()->validate([
-            'caption'=>'required',
-            'image'=>['required','image'],
-        ]);
-
-        \App\Models\Post::create($data);
-
-        dd(request()->all());
-    }
-
 }
